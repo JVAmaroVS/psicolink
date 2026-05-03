@@ -1,0 +1,385 @@
+/* ═══════════════════════════════════════════════
+   global.css — Reset, variáveis, nav, footer
+   Importado por TODOS os HTMLs
+═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap');
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Variáveis ── */
+:root {
+  --gold: #B8924A;
+  --gold-dark: #7A5C2E;
+  --gold-light: #E8C87A;
+  --gold-pale: #F5EDD8;
+  --cream: #F2EDE4;
+  --cream-dark: #E8DFD0;
+  --brown: #3D2B1A;
+  --text-body: #4A3728;
+  --text-muted: #8A7060;
+  --white: #FDFAF5;
+}
+
+/* ── Base ── */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Layout wrapper ── */
+.ps-content {
+  flex: 1;
+}
+
+/* ═══════════════
+   NAV
+═══════════════ */
+.ps-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--cream-dark);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.ps-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.ps-logo img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+.ps-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.ps-logo-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  letter-spacing: 0.06em;
+}
+
+.ps-logo-sub {
+  font-size: 8.5px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold-dark);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Nav links */
+.ps-nav-links {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.ps-nav-links a {
+  background: none;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ps-nav-links a:hover,
+.ps-nav-links a.active {
+  color: var(--gold-dark);
+  border-bottom-color: var(--gold);
+}
+
+/* ═══════════════
+   FOOTER
+═══════════════ */
+.ps-footer {
+  background: var(--brown);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(245, 237, 216, 0.6);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.ps-footer span {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+/* ═══════════════
+   SECTION HELPERS
+═══════════════ */
+.ps-section {
+  padding: 3rem 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+
+.ps-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 4vw, 26px);
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 0.4rem;
+}
+
+.ps-section-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* ═══════════════
+   BUTTONS
+═══════════════ */
+.btn-gold {
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-gold:hover {
+  background: var(--gold-dark);
+  color: var(--white);
+}
+
+.btn-gold:active {
+  transform: scale(0.98);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold-dark);
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold-pale);
+  color: var(--gold-dark);
+}
+
+.btn-outline-gold:active {
+  transform: scale(0.98);
+}
+
+/* ═══════════════
+   CRISIS BOX
+═══════════════ */
+.ps-crisis {
+  background: var(--gold-pale);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  margin: 0 auto 2rem;
+  max-width: 680px;
+}
+
+.ps-crisis h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 4px;
+}
+
+.ps-crisis p {
+  font-size: 13px;
+  color: var(--text-body);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.ps-crisis a {
+  color: var(--gold-dark);
+  font-weight: 500;
+}
+
+.link-mapa {
+  color: var(--gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ═══════════════
+   DIVIDER
+═══════════════ */
+.divider {
+  height: 1px;
+  background: var(--cream-dark);
+  margin: 0 2rem;
+}
+
+/* ═══════════════════════
+   RESPONSIVIDADE GLOBAL
+═══════════════════════ */
+@media (max-width: 640px) {
+
+  .ps-nav {
+    padding: 0 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .ps-nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--cream-dark);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+    z-index: 99;
+  }
+
+  .ps-nav-links.open {
+    display: flex;
+  }
+
+  .ps-nav-links li {
+    width: 100%;
+  }
+
+  .ps-nav-links a {
+    width: 100%;
+    text-align: left;
+    padding: 12px 1.5rem;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    font-size: 14px;
+    display: block;
+  }
+
+  .ps-nav-links a.active,
+  .ps-nav-links a:hover {
+    border-left-color: var(--gold);
+    border-bottom-color: transparent;
+    background: var(--gold-pale);
+  }
+
+  .ps-section {
+    padding: 2rem 1rem;
+  }
+
+  .ps-logo-sub {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .ps-logo-name {
+    font-size: 14px;
+  }
+}

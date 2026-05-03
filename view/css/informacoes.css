@@ -1,0 +1,152 @@
+/* ═══════════════════════════════════════════════
+   informacoes.css — Estilos das condições/tabs
+═══════════════════════════════════════════════ */
+
+/* ── Tabs ── */
+.ps-condition-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 7px 18px;
+  border-radius: 4px;
+  border: 1px solid var(--cream-dark);
+  background: var(--white);
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.tab-btn.active {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+
+/* ── Condition Card ── */
+.condition-card {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-top: 3px solid var(--gold);
+  border-radius: 0 0 10px 10px;
+  padding: 1.5rem;
+  display: none;
+}
+
+.condition-card.visible {
+  display: block;
+}
+
+.condition-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 0.75rem;
+}
+
+.condition-card .desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+  border-left: 2px solid var(--gold-light);
+  padding-left: 12px;
+}
+
+/* ── Symptom grid ── */
+.symptom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.symptom-block h4 {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.symptom-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.symptom-block li {
+  font-size: 13px;
+  color: var(--text-body);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.symptom-block li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.symptom-block.rare li::before {
+  background: var(--gold-light);
+  border: 1px solid var(--gold);
+}
+
+/* ── Causes ── */
+.causes-row {
+  border-top: 1px solid var(--cream-dark);
+  padding-top: 1rem;
+}
+
+.causes-row h4 {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.cause-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cause-tag {
+  background: var(--gold-pale);
+  color: var(--gold-dark);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  border: 1px solid rgba(184, 146, 74, 0.2);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 640px) {
+  .symptom-grid {
+    grid-template-columns: 1fr;
+  }
+}

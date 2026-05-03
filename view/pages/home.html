@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PsicoLink — Início</title>
+  <link rel="icon" type="image/png" href="../images/PsicoLink.png" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="ps-nav">
+    <a class="ps-logo" href="home.html">
+      <img src="../images/PsicoLinkBrain.png" alt="PsicoLink" />
+      <div class="ps-logo-text">
+        <span class="ps-logo-name">PSICOLINK</span>
+        <span class="ps-logo-sub">Apoio e conhecimento em saúde mental</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="ps-nav-links" id="nav-links">
+      <li><a href="home.html" data-page="home">Início</a></li>
+      <li><a href="informacoes.html" data-page="info">Informações</a></li>
+      <li><a href="mapa.html" data-page="mapa">Mapa</a></li>
+      <li><a href="sobre.html" data-page="sobre">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── CONTEÚDO ── -->
+  <main class="ps-content">
+
+    <!-- Hero -->
+    <section class="ps-hero">
+      <img src="../images/PsicoLinkNull.png" alt="PsicoLink" class="ps-hero-logo" />
+      <h1>Sua saúde mental importa.<br><em>E tem ajuda por perto.</em></h1>
+      <p>O PsicoLink reúne informações claras sobre saúde mental e conecta você a locais de atendimento psicológico
+        próximos de você.</p>
+      <div class="ps-hero-btns">
+        <a href="informacoes.html" class="btn-gold">Entender mais</a>
+        <a href="mapa.html" class="btn-outline-gold">Encontrar ajuda perto de mim</a>
+      </div>
+    </section>
+
+    <!-- Quick cards (gerados pelo HomeController) -->
+    <section class="ps-section">
+      <p class="section-label">Explore por tema</p>
+      <h2 class="ps-section-title">Sobre o que você quer saber?</h2>
+      <p class="ps-section-sub">Toque em uma condição para ver sintomas, causas e como buscar ajuda.</p>
+      <div class="quick-cards" id="quick-cards-grid">
+        <!-- Preenchido dinamicamente por HomeController -->
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Alerta CVV -->
+    <div class="ps-crisis" style="margin-top: 2rem;">
+      <h4>Precisa de ajuda imediata?</h4>
+      <p>
+        Se você está em crise, ligue agora para o <strong>CVV: 188</strong> (gratuito, 24h)
+        ou acesse <a href="https://cvv.org.br" target="_blank" rel="noopener">cvv.org.br</a>
+        para conversar pelo chat.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="ps-footer">
+    <span>PSICOLINK</span> — Apoio e Conhecimento em Saúde Mental
+    &nbsp;·&nbsp; Conteúdo educativo, não substitui diagnóstico profissional
+  </footer>
+
+  <!-- Model + Controller -->
+  <script src="../../model/conditions.js"></script>
+  <script src="../../controller/navigation.js"></script>
+  <script src="../../controller/home.js"></script>
+
+</body>
+
+</html>

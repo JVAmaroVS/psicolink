@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PsicoLink — Mapa</title>
+  <link rel="icon" type="image/png" href="../images/PsicoLink.png" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/mapa.css" />
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="ps-nav">
+    <a class="ps-logo" href="home.html">
+      <img src="../images/PsicoLinkBrain.png" alt="PsicoLink" />
+      <div class="ps-logo-text">
+        <span class="ps-logo-name">PSICOLINK</span>
+        <span class="ps-logo-sub">Apoio e conhecimento em saúde mental</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="ps-nav-links" id="nav-links">
+      <li><a href="home.html" data-page="home">Início</a></li>
+      <li><a href="informacoes.html" data-page="info">Informações</a></li>
+      <li><a href="mapa.html" data-page="mapa">Mapa</a></li>
+      <li><a href="sobre.html" data-page="sobre">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── CONTEÚDO ── -->
+  <main class="ps-content">
+
+    <section class="ps-map-section">
+      <p class="section-label">Atendimento próximo</p>
+      <h1 class="ps-section-title">Encontre ajuda perto de você</h1>
+      <p class="ps-section-sub">
+        Digite sua cidade ou bairro e localize clínicas, CAPS, hospitais e serviços de saúde mental.
+      </p>
+
+      <div class="map-container">
+
+        <!-- Barra de busca -->
+        <div class="map-search-row">
+          <input type="text" id="map-input" placeholder="Ex: Vitória, Espírito Santo..."
+            aria-label="Buscar por cidade ou bairro" />
+          <button class="btn-gold" id="btn-search">Buscar</button>
+          <button class="btn-locate" id="btn-locate" title="Usar minha localização">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+              <circle cx="12" cy="12" r="9" opacity=".3" />
+            </svg>
+            <span>Usar minha localização</span>
+          </button>
+        </div>
+
+        <!-- Barra de status (oculta por padrão) -->
+        <div id="map-status"></div>
+
+        <!-- Mapa Leaflet -->
+        <div id="map"></div>
+
+        <!-- Dica -->
+        <p class="map-tip">
+          Resultados via OpenStreetMap + Overpass API.
+          Inclui clínicas, CAPS, hospitais e serviços do SUS.
+          Confirme disponibilidade antes de ir.
+        </p>
+
+        <!-- Legenda (gerada pelo MapController) -->
+        <div class="map-legend" id="map-legend"></div>
+
+      </div><!-- /map-container -->
+
+      <!-- Recursos gratuitos (gerados pelo MapController) -->
+      <div style="margin-top: 1.75rem;">
+        <p class="section-label">Recursos gratuitos</p>
+        <ul class="resource-list" id="free-resources"></ul>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="ps-footer">
+    <span>PSICOLINK</span> — Apoio e Conhecimento em Saúde Mental
+    &nbsp;·&nbsp; Conteúdo educativo, não substitui diagnóstico profissional
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Model + Controllers -->
+  <script src="../../model/mapConfig.js"></script>
+  <script src="../../controller/navigation.js"></script>
+  <script src="../../controller/mapa.js"></script>
+
+</body>
+
+</html>

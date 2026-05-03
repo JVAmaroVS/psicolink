@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PsicoLink — Informações</title>
+  <link rel="icon" type="image/png" href="../images/PsicoLink.png" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/informacoes.css" />
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="ps-nav">
+    <a class="ps-logo" href="home.html">
+      <img src="../images/PsicoLinkBrain.png" alt="PsicoLink" />
+      <div class="ps-logo-text">
+        <span class="ps-logo-name">PSICOLINK</span>
+        <span class="ps-logo-sub">Apoio e conhecimento em saúde mental</span>
+      </div>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="ps-nav-links" id="nav-links">
+      <li><a href="home.html" data-page="home">Início</a></li>
+      <li><a href="informacoes.html" data-page="info">Informações</a></li>
+      <li><a href="mapa.html" data-page="mapa">Mapa</a></li>
+      <li><a href="sobre.html" data-page="sobre">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── CONTEÚDO ── -->
+  <main class="ps-content">
+
+    <section class="ps-section">
+      <p class="section-label">Saúde mental em foco</p>
+      <h1 class="ps-section-title">Conheça as condições</h1>
+      <p class="ps-section-sub">
+        Selecione uma condição para ver sintomas comuns, menos conhecidos e possíveis causas.
+      </p>
+
+      <!-- Tabs (geradas pelo InformacoesController) -->
+      <div class="ps-condition-tabs" id="condition-tabs">
+        <!-- Preenchido dinamicamente -->
+      </div>
+
+      <!-- Cards (gerados pelo InformacoesController) -->
+      <div id="condition-cards">
+        <!-- Preenchido dinamicamente -->
+      </div>
+    </section>
+
+    <!-- Aviso -->
+    <div class="ps-crisis">
+      <h4>Lembre-se: informação é o início.</h4>
+      <p>
+        Esses conteúdos são educativos. Somente um profissional de saúde mental pode fazer
+        um diagnóstico. Use o
+        <a href="mapa.html" class="link-mapa">Mapa</a>
+        para encontrar atendimento perto de você.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="ps-footer">
+    <span>PSICOLINK</span> — Apoio e Conhecimento em Saúde Mental
+    &nbsp;·&nbsp; Conteúdo educativo, não substitui diagnóstico profissional
+  </footer>
+
+  <!-- Model + Controllers -->
+  <script src="../../model/conditions.js"></script>
+  <script src="../../controller/navigation.js"></script>
+  <script src="../../controller/informacoes.js"></script>
+
+</body>
+
+</html>

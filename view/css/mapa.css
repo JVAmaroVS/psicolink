@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════
+   mapa.css — Estilos exclusivos do Mapa
+═══════════════════════════════════════ */
+
+.ps-map-section {
+  padding: 3rem 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Container do mapa ── */
+.map-container {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-top: 3px solid var(--gold);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+/* ── Barra de busca ── */
+.map-search-row {
+  padding: 1rem 1.25rem;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--cream-dark);
+  align-items: center;
+}
+
+.map-search-row input {
+  flex: 1;
+  border: 1px solid var(--cream-dark);
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  background: var(--cream);
+  color: var(--brown);
+  min-width: 0;
+}
+
+.map-search-row input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+/* ── Botão localização ── */
+.btn-locate {
+  background: var(--white);
+  color: var(--gold-dark);
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
+  padding: 9px 14px;
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-locate:hover {
+  background: var(--gold-pale);
+}
+
+.btn-locate:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Status bar ── */
+#map-status {
+  display: none;
+  padding: 8px 1.25rem;
+  font-size: 12px;
+  color: var(--gold-dark);
+  background: var(--gold-pale);
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+/* ── Mapa Leaflet ── */
+#map {
+  width: 100%;
+  height: 360px;
+  transition: opacity 0.3s;
+}
+
+/* ── Dica ── */
+.map-tip {
+  padding: 0.65rem 1.25rem;
+  font-size: 11px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--cream-dark);
+  font-weight: 300;
+}
+
+/* ── Legenda ── */
+.map-legend {
+  padding: 0.6rem 1.25rem;
+  border-top: 1px solid var(--cream-dark);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.map-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.map-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Recursos gratuitos ── */
+.resource-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.resource-list li {
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.resource-list li span {
+  color: var(--text-body);
+  font-weight: 300;
+}
+
+.resource-list li strong {
+  color: var(--gold-dark);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Popup Leaflet ── */
+.leaflet-popup-content-wrapper {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  color: var(--brown);
+  border-radius: 8px;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 640px) {
+  .ps-map-section {
+    padding: 2rem 1rem;
+  }
+
+  .map-search-row {
+    flex-wrap: wrap;
+  }
+
+  .btn-locate {
+    width: 100%;
+    justify-content: center;
+  }
+
+  #map {
+    height: 280px;
+  }
+}
