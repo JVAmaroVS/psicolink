@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="view/images/PsicoLinkNull.png" alt="PsicoLink" width="180" />
+  <img src="view/images/PsicoLink.png" alt="PsicoLink" width="180" />
   <h1>PsicoLink</h1>
   <p><strong>Apoio e Conhecimento em Saúde Mental</strong></p>
 
@@ -97,7 +97,7 @@ Nenhuma dependência paga. Nenhum framework. Nenhum build step.
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/psicolink.git
+   git clone https://github.com/JVAmaroVS/psicolink.git
    cd psicolink
    ```
 
