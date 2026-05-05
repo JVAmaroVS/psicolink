@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="view/images/PsicoLink.png" alt="PsicoLink" width="180" />
+  <img src="view/images/PsicoLinkNull.png" alt="PsicoLink" width="180" />
   <h1>PsicoLink</h1>
   <p><strong>Apoio e Conhecimento em Saúde Mental</strong></p>
 
@@ -29,6 +29,7 @@ O **PsicoLink** é um site educativo de saúde mental com dois pilares:
 - Mapa interativo com geolocalização automática
 - Busca manual por cidade ou bairro
 - Marcadores coloridos por tipo de serviço (hospital, psicólogo, clínica, CAPS)
+- Widget flutuante do CVV visível em todas as páginas
 - Design responsivo para desktop e mobile
 - Menu hambúrguer para telas pequenas
 - Navegação direta para condição via URL (`informacoes.html#burnout`)
@@ -48,7 +49,7 @@ PsicoLink/
 │
 ├── view/
 │   ├── pages/
-│   │   ├── home.html         # Início
+│   │   ├── home.html          # Início
 │   │   ├── informacoes.html   # Condições de saúde mental
 │   │   ├── mapa.html          # Mapa de atendimento
 │   │   └── sobre.html         # Sobre o projeto
@@ -57,17 +58,20 @@ PsicoLink/
 │   │   ├── home.css           # Hero, quick cards
 │   │   ├── informacoes.css    # Tabs, cards de condição, sintomas
 │   │   ├── mapa.css           # Mapa, legenda, recursos
-│   │   └── sobre.css          # Bloco sobre
+│   │   ├── sobre.css          # Bloco sobre
+│   │   └── cvv-widget.css     # Widget flutuante do CVV
 │   └── images/
 │       ├── PsicoLink.png          # Favicon
 │       ├── PsicoLinkBrain.png     # Ícone da navbar
-│       └── PsicoLinkNull.png      # Logo da hero
+│       ├── PsicoLinkNull.png      # Logo da hero
+│       └── CVV.png                # Logo do CVV (widget flutuante)
 │
 └── controller/
     ├── navigation.js      # Destaca nav ativo por URL, menu hambúrguer
     ├── home.js            # Gera quick-cards dinamicamente
     ├── informacoes.js     # Gera tabs e cards, deep-link via hash
-    └── mapa.js            # Leaflet, Overpass API, geolocalização
+    ├── mapa.js            # Leaflet, Overpass API, geolocalização
+    └── cvv-widget.js      # Widget flutuante do CVV
 ```
 
 ---
@@ -93,7 +97,7 @@ Nenhuma dependência paga. Nenhum framework. Nenhum build step.
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/JVAmaroVS/psicolink.git
+   git clone https://github.com/seu-usuario/psicolink.git
    cd psicolink
    ```
 
@@ -128,6 +132,17 @@ A busca utiliza a **Overpass API** (dados do OpenStreetMap) e retorna:
 Se a permissão for negada, o mapa abre normalmente e a busca manual por cidade continua disponível.
 
 > **Limitação conhecida:** o OpenStreetMap depende de dados colaborativos. Em cidades menores, poucos consultórios podem estar cadastrados. Hospitais públicos e CAPS grandes geralmente aparecem bem.
+
+---
+
+## 🆘 Widget CVV
+
+Em todas as páginas do site há um widget flutuante no centro da lateral direita, inspirado no botão VLibras dos sites do governo brasileiro.
+
+- **Desktop:** passe o mouse sobre o ícone para expandir o painel
+- **Mobile:** toque no ícone para abrir/fechar
+
+O painel exibe o número **188** (CVV, gratuito, 24h) e o link direto para [cvv.org.br](https://cvv.org.br).
 
 ---
 

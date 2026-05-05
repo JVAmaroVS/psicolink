@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════
+   cvv-widget.css — Widget flutuante CVV
+   Inspirado no botão VLibras dos sites do governo.
+   Fica fixo no centro-direito em todas as telas.
+═══════════════════════════════════════════════════ */
+
+/* ── Wrapper posicionado ── */
+.cvv-widget {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+/* ── Ícone (sempre visível) ── */
+.cvv-widget__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--brown);
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s;
+  border: none;
+}
+
+.cvv-widget__icon:hover {
+  background: #2a1c0e;
+}
+
+.cvv-widget__icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  font-size: 10px;
+  color: var(--white);
+}
+
+/* ── Painel expandido (oculto por padrão) ── */
+.cvv-widget__panel {
+  background: var(--brown);
+  color: var(--white);
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  white-space: nowrap;
+
+  /* Estado inicial: escondido à direita */
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 0;
+  padding-right: 0;
+
+  /* Animação da direita para a esquerda */
+  transition:
+    max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity   0.25s ease,
+    padding   0.35s ease;
+}
+
+/* ── Estado expandido (hover em desktop, classe .open em touch) ── */
+.cvv-widget:hover .cvv-widget__panel,
+.cvv-widget.open  .cvv-widget__panel {
+  max-width: 220px;
+  opacity: 1;
+  pointer-events: auto;
+  padding: 14px 16px;
+}
+
+/* ── Textos do painel ── */
+.cvv-widget__label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.cvv-widget__phone {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.cvv-widget__sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(253, 250, 245, 0.65);
+  line-height: 1.3;
+}
+
+.cvv-widget__link {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold-light);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232, 200, 122, 0.4);
+  padding-bottom: 1px;
+  width: fit-content;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.cvv-widget__link:hover {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+/* ── Responsivo: menor em telas pequenas ── */
+@media (max-width: 640px) {
+  .cvv-widget__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cvv-widget__icon img {
+    width: 29px;
+    height: 29px;
+  }
+
+  .cvv-widget__phone {
+    font-size: 18px;
+  }
+}
